@@ -2,6 +2,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--This should be above the static file codes IMPORTANT-->
+    <!--########## IMPORTANT #################-->
+    {% load staticfiles %}
+    <!--########## IMPORTANT #################-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -49,7 +53,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <a class="navbar-brand" href="#">Jerry Mart</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -60,10 +64,10 @@
               <a class="nav-link" href="https://www.martrica.com" target="_blank">Website</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">Resume/CV</a>
+              <a class="nav-link" href="{% url 'bloghome' %}">Blog </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'bloghome' %}">Blog </a>
+              <a class="nav-link" href="{% static 'Resume.pdf' %}">Resume/CV</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">LinkedIn</a>
@@ -89,6 +93,7 @@
           <a href="mailto:jmart@martrica.com" class="btn btn-primary my-2">Email Me</a>
           <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
         </p>
+        <img src="{% static 'Jerry.jpg' %}"/>
       </div>
     </section>
 
