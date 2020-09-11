@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Album example · Bootstrap</title>
+    <title>Jerry Mart</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -63,7 +63,7 @@
               <a class="nav-link" href="#" target="_blank">Resume/CV</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog </a>
+              <a class="nav-link" href="{% url 'bloghome' %}">Blog </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">LinkedIn</a>
@@ -103,7 +103,7 @@
         {% for job in jobs.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="{{ job.image.url}}" width="100%" height="300" />
+            <img class="img-fluid" src="{{ job.image.url}}" width="50%" height="250" />
             <div class="card-body">
               <p class="card-text">{{ job.summary }}</p>
             </div>

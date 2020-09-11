@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views # 1. for home
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home'),
+    path('', jobs.views.home, name='home'),       # 2. for home using Function views method for jobs app
+    path('blog/', include('blog.urls')),           # using Including another URLconf method for blog app
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
